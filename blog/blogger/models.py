@@ -5,5 +5,6 @@ class blogger(models.Model):
     last_name = models.CharField(max_length=64)
     username = models.CharField(max_length=128)
     email = models.EmailField(unique=True)
+    password = models.CharField(max_length=128)
 
 
