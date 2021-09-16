@@ -1,5 +1,6 @@
 from django.db import models
 from blogger.models import blogger
+
 class post(models.Model):
     date = models.DateTimeField()
     body = models.TextField(max_length=1000)
