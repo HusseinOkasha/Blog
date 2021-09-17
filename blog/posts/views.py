@@ -10,10 +10,10 @@ def create_post(request, id):
     if request.method == "POST":
         writter = blogger.objects.get(id = id)
         print(datetime.datetime.now())
-        new_post = post(date = datetime.datetime.now(), body=request.POST["body"], is_public = request.POST["is_public"], blogger_id = writter)
+        new_post = post(date = datetime.datetime.now(), body=request.POST["body"], is_public = request.POST.get("private",0), blogger_id = writter)
         form = CreatPostForm(request.POST ,instance=new_post)
         form.save()
-        return HttpResponseRedirect("/blogger/home")
+        return HttpResponseRedirect(f"/blogger/{id}/home")
         
     else:    
         form = CreatPostForm()
