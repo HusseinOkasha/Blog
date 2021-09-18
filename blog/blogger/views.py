@@ -6,10 +6,11 @@ from django.views import View
 from .models import blogger
 from posts.models import post
 from django.db.models import Q
+
 # Create your views here.
 def home(request, id):
-    posts = post.objects.filter(Q(blogger_id = id) | Q(is_public ="1" )).order_by('date')
-    return render(request,'blogger/home.html', context={"posts": posts})
+    posts = post.objects.filter(Q(blogger_id = id) | Q(is_public ="1" )).order_by('-date')
+    return render(request,'blogger/home.html', context={"posts": posts, "id":id})
 
 def signup(request):
     if request.method== "POST":
@@ -34,4 +35,4 @@ def login(request):
             return HttpResponseRedirect('/blogger/login/')
     else:    
         form = loginForm()
-        return render(request, "blogger/signup.html",{"form":form})
+        return render(request, "blogger/login.html",{"form":form})

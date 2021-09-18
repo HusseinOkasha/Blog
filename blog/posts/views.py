@@ -17,4 +17,4 @@ def create_post(request, id):
         
     else:    
         form = CreatPostForm()
-        return render(request, "posts/create_post.html",{"form":form})
+        return render(request, "posts/create_post.html",{"form":form, "id":id})
