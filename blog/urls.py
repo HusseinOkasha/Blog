@@ -18,8 +18,9 @@ from django.urls import path
 from django.urls.conf import include
 
 urlpatterns = [
+    path('', include('login.urls')),
     path('admin/', admin.site.urls),
     path('blogger/<int:id>/create_post/', include('posts.urls')),
     path('blogger/',include("blogger.urls")),
-
+    
 ]
