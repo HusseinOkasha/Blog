@@ -25,14 +25,3 @@ def signup(request):
         form = signupForm()
         return render(request, "blogger/signup.html",{"form":form})
 
-def login(request):
-    if request.method == "POST":
-        form = loginForm(request.POST)
-        user = blogger.objects.get(email=request.POST['email'])
-        if user.password == request.POST['password']:
-            return HttpResponseRedirect(f"/blogger/{user.id}/home")
-        else:
-            return HttpResponseRedirect('/blogger/login/')
-    else:    
-        form = loginForm()
-        return render(request, "blogger/login.html",{"form":form})

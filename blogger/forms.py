@@ -7,10 +7,5 @@ class signupForm(forms.ModelForm):
         fields = '__all__'
         widgets = {'password': forms.PasswordInput(),}   
 
-class loginForm(forms.ModelForm):
-
-    class Meta:
-        model = blogger
-        fields = ['email','password']
-        widgets = {'password': forms.PasswordInput(),}   
+   
     
