@@ -10,7 +10,7 @@ def login(request):
         if user.password == request.POST['password']:
             return HttpResponseRedirect(f"/blogger/{user.id}/home")
         else:
-            return HttpResponseRedirect('/blogger/login/')
+            return HttpResponseRedirect('/')
     else:    
         form = LoginForm()
         return render(request, "login/login.html",{"form":form})
