@@ -1,7 +1,7 @@
 from django import forms
-from .models import blogger
-class signupForm(forms.ModelForm):
+from blogger.models import blogger
 
+class SignupForm(forms.ModelForm):
     class Meta:
         model = blogger
         fields = '__all__'

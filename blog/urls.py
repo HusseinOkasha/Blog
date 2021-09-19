@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blogger/<int:id>/create_post/', include('posts.urls')),
     path('blogger/',include("blogger.urls")),
+    path('signup/', include('signup.urls'))
     
 ]

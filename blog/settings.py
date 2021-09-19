@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'blogger',
     'posts',
     'login',
+    'signup',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
